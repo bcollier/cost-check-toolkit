@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+.DS_Store
+# raw agent transcripts; copy trimmed excerpts into DEMONSTRATION.md / ITERATION.md instead
+notes/smoke/
+notes/runs/
