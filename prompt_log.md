@@ -18,3 +18,8 @@ Created this repo with the `cost-check` skill, the `model_prices` MCP server (mc
 > log all of my prompts starting from give me ideas on what to do for this assignment https://www.cs.cmu.edu/~113/hw8.html
 
 Started this file with prompts 1–3.
+
+### 4. 2026-11-13
+> push this yourself
+
+Created the public GitHub repo bcollier/cost-check-toolkit and pushed. Ben had asked for it after the first attempt was blocked.
