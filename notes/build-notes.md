@@ -1,23 +1,28 @@
 # Build notes (facts for the write-up; not graded prose)
 
 ## Evidence from earlier prompt logs
-Method: `notes/log_themes.py` takes only my own quoted prompts (lines starting with `>`), removes duplicates, and counts prompts per theme by keyword. Keyword matching overcounts a little (e.g. "free" in "feel free"); the quotes below were read by hand.
+Method: `notes/log_themes.py` takes only my own prompts (quoted with `>`, in code blocks, or in italics, depending on the log), removes duplicates, and counts prompts per theme by keyword. Keyword matching overcounts a little (e.g. "free" in "feel free"); the quotes below were read by hand.
 
-| Theme | HW3 gAIm API Explorer | HW4 Ignatius | HW6 Slide Finder | Project 2 Faculty Twin | Total |
-|---|---|---|---|---|---|
-| prompts in the log | 4 | 286 | 48 | 140 | 478 |
-| screenshots ("here's what I see") | 0 | 62 | 0 | 1 | 63 |
-| cost / free mode | 0 | 41 | 0 | 7 | 48 |
-| look / design | 0 | 25 | 4 | 7 | 36 |
-| README / docs | 0 | 15 | 2 | 13 | 30 |
-| deploy / push | 0 | 17 | 0 | 13 | 30 |
-| test it / it's broken | 1 | 13 | 3 | 12 | 29 |
-| keys / secrets | 0 | 20 | 0 | 8 | 28 |
-| phone / iPhone | 0 | 19 | 0 | 0 | 19 |
-| spec first | 0 | 7 | 2 | 5 | 14 |
-| student privacy / names | 0 | 4 | 0 | 8 | 12 |
+| Theme | HW3 NHL Compare | HW3 gAIm Explorer | HW4 Ignatius | HW6 Slide Finder | HW7 Mime (phase 1) | HW7 Monday 8:55 (phase 2) | Project 2 Faculty Twin | Total |
+|---|---|---|---|---|---|---|---|---|
+| prompts in the log | 5 | 4 | 286 | 48 | 18 | 26 | 140 | 527 |
+| screenshots ("here's what I see") | 0 | 0 | 62 | 0 | 0 | 0 | 1 | 63 |
+| cost / free mode | 0 | 0 | 41 | 0 | 0 | 0 | 7 | 48 |
+| look / design | 0 | 0 | 25 | 4 | 6 | 3 | 7 | 45 |
+| deploy / push | 0 | 0 | 17 | 0 | 1 | 2 | 13 | 33 |
+| README / docs | 0 | 0 | 15 | 2 | 1 | 0 | 13 | 31 |
+| test it / it's broken | 1 | 1 | 13 | 3 | 0 | 0 | 12 | 30 |
+| keys / secrets | 1 | 0 | 20 | 0 | 0 | 0 | 8 | 29 |
+| spec first / still in spec? | 0 | 0 | 7 | 2 | 3 | 6 | 5 | 23 |
+| phone / iPhone | 0 | 0 | 19 | 0 | 0 | 0 | 0 | 19 |
+| student privacy / names | 0 | 0 | 4 | 0 | 0 | 0 | 8 | 12 |
+| log my prompts | 0 | 0 | 3 | 1 | 1 | 2 | 3 | 10 |
+| live link / play it on the web | 0 | 0 | 5 | 0 | 0 | 3 | 1 | 9 |
+| stop and check with me | 0 | 0 | 0 | 0 | 3 | 0 | 1 | 4 |
 
-HW5 and HW7 logs are not in these repos. Faculty Twin is Project 2, outside the HW3–HW7 range the assignment names; HW4 alone carries the cost theme.
+There is no HW5 in this course: the homework list goes HW4, Project 2, HW6. HW7's phase 2 log is the second half of `monday-855/prompt_log.md` (from line 94); the first half is the original author's phase 1 log.
+
+**Depth vs. breadth.** Cost is the deepest theme (48 prompts) but nearly all from one project (HW4). "Log my prompts" is the broadest: it shows up in HW4, HW6, both halves of HW7 and Project 2, and again in HW8 ("log all of my prompts starting from…"). Spec questions also span HW4 through HW7: "have you changed the spec since handoff?", "would it still be up to spec if we changed the setting", "keep to the spec but we want this to be awesome".
 
 Cost quotes (HW4, Ignatius at Home, PROMPT_LOG.md), in the order I typed them:
 - "can we do a free version with free microsoft tts or a low cost version as well?"
