@@ -33,3 +33,13 @@ Redid the search properly. The first pass had counted every line of the logs, in
 > the logs for HW5 and HW7 should be on the prompt logs of their repos/
 
 Found the logs. The course has no HW5: Project 2 sits in that slot. HW7 has two logs: `mime-over-matter` (phase 1, prompts in code blocks) and the second half of `monday-855/prompt_log.md` (phase 2, from line 94; the first half is the original author's). Also added a second HW3 log (`nhl-player-compare`). Cloned these repos locally, taught `notes/log_themes.py` the three log formats, and reran it: 527 prompts across seven logs. HW7 adds no cost prompts, but "log my prompts" turns out to be the broadest theme, appearing in five projects plus HW8.
+
+### 7. 2026-11-16
+> ok I'm ready to test it out
+
+Reminded me of the demo requirements (notes/ASSIGNMENT_CHECKLIST.md). Picked a real task: Ignatius's model menu (`app/pricing.py`) still called Haiku 4.5 "fastest, cheapest" and lacked the 5.5 models. Run 1 doer: a fresh `claude -p` session (Opus 5.5) in the Ignatius API repo, told to update the menu and fallback prices on a local branch without pushing. The prompt does not name `model_prices`; web search was also allowed. Transcript: notes/runs/run1-doer.jsonl.
+
+### 8. 2026-11-16
+> remove the HW8 and CS name in teh description of this repo HW8 (CMU 15-114): a cost-check skill and a model_prices MCP server. be specific that this is for API costs correct?
+
+Changed the GitHub description to "An agent skill that flags paid API calls (LLM, text-to-speech, search) and whether each has a free fallback, plus an MCP server that looks up live LLM API prices".

@@ -52,3 +52,13 @@ Project 2 (Faculty Twin): "I want it to run for free, would it fit in the free c
   args = ["<repo>/mcp-server/model_prices_server.py"]
   ```
 - Python 3.14 venv in `.venv` (`python3.14 -m venv .venv && .venv/bin/pip install -r mcp-server/requirements.txt`).
+
+## Run 1 (2026-11-16): Ignatius model menu
+- **Task:** Ignatius's `app/pricing.py` still labeled Haiku 4.5 "fastest, cheapest" and lacked the 5.5 models. The doer prompt asked it to bring MODELS and FALLBACK_PRICES up to today's models and prices on a local branch without pushing, and did not mention `model_prices`.
+- **Doer:** a fresh `claude -p` session, Claude Opus 5.5, in the Ignatius API repo. It called `mcp__model-prices__model_prices` with `{"query": "claude", "limit": 40}` without being told to, then also fetched Anthropic's pricing and models pages to confirm. It added Fable 5.2, Sonnet 5.5 and Haiku 5.5, moved the labels, and committed `3f60323` on `demo/model-prices-run1`; 161 tests passed. On its own it noted that Haiku 5.5 costs 5× more above 100k prompt tokens, which the app's flat-rate `Meter` can't record. It left that unfixed and also left Haiku 4.5 in `app/preview.py` and `app/talk_turns.py` ("outside the request"). 19 turns. Transcript: `notes/runs/run1-doer.jsonl`; summary with `python3 notes/summarize_run.py notes/runs/run1-doer.jsonl`.
+- **Checker:** a fresh `codex exec --sandbox read-only` session, GPT-5.6, prompted only "Check it for API costs before I push". It loaded `cost-check` from the description ("I'm using the cost-check skill because this branch is headed for push…") and called `model_prices` 9 times. It reported 4 lines and flagged Haiku 5.5 `[COST HIDDEN]` because only the low tier is stored (`app/pricing.py:59`) and `Meter` never applies the higher rate (`app/pricing.py:140`). It confirmed the free fallback (free accounts switch to Jetstream, `app/checks.py:59`), and changed no files. Transcript: `notes/runs/run1-checker.txt` (final report at the end).
+- **Where the output drifted from the skill (possible ITERATION material):**
+  - It added a "Push verdict: hold…" line and closing prose outside the fixed format.
+  - Three models cite the same line (`app/llm.py:87`, the shared call site), so the citation doesn't say where each model is chosen.
+  - Fix 2 ("prefer Sonnet 5.5 over Fable 5.2") is product advice rather than a finding.
+  - It marked models `[COST SHOWN]` without citing where the user sees the cost.
