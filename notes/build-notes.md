@@ -62,3 +62,22 @@ Project 2 (Faculty Twin): "I want it to run for free, would it fit in the free c
   - Three models cite the same line (`app/llm.py:87`, the shared call site), so the citation doesn't say where each model is chosen.
   - Fix 2 ("prefer Sonnet 5.5 over Fable 5.2") is product advice rather than a finding.
   - It marked models `[COST SHOWN]` without citing where the user sees the cost.
+
+## Run 2 (2026-11-16): Ignatius fast model, Haiku 4.5 → 5.5
+- **Task:** Ignatius's preview (`FAST_CLAUDE` in `app/preview.py`) and the Haiku brain for talking in turns (`app/talk_turns.py`) still used Haiku 4.5 ($1/$5 per 1M tokens). The doer prompt asked it to switch them to Haiku 5.5 and keep the speed and cost wording true, on a branch built from Run 1's, without pushing. It did not mention `model_prices`.
+- **Doer:** a fresh `claude -p` session, Claude Opus 5.5. It called `mcp__model-prices__model_prices` with `{"query": "claude haiku"}` without being told to. It changed 7 lines in 7 files (code, labels, docs) and committed `62c9271` on `demo/haiku-5-5-run2`; 161 tests passed.
+  - It relabeled the brain as "under a tenth of a cent a reply" and removed the "about 2 seconds" and "a second or two" claims, because it had no timing for 5.5.
+  - It warned that anyone whose saved brain is Haiku 4.5 would quietly get the first brain on the list.
+  - Its own check of the preview switch needed approval and didn't run.
+  - 31 turns. Excerpts: `notes/excerpts/run2.md`.
+- **Checker:** a fresh `codex exec --sandbox read-only` session, GPT-5.6, prompted only "Check it for API costs before I push". It loaded `cost-check` from the description again and called `model_prices` 2 times. It reported 3 lines:
+  - preview `[COST HIDDEN]` (`app/preview.py:53`)
+  - conversation summary `[COST HIDDEN]` (`app/talk_turns.py:161`)
+  - companion reply `[COST SHOWN]` (`app/talk_turns.py:177`)
+
+  All three were `[FREE FALLBACK]` (Jetstream). Its fix 1 was "Show the preview's estimated cost before automatically running it."
+- **Consistent with Run 1:** the skill triggered from its description both times, the tool was called both times, every line had a file:line, and no files changed.
+- **Not flagging Haiku 5.5's over-100k price was correct this time:** the preview sends at most 6,000 characters (`PREVIEW_CHARS`) and the companion context at most 60,000 (`CONTEXT_MAX_CHARS`), far below 100k tokens.
+- **Drifted again, the same way as Run 1:** a verdict line ("Cost review: pass with one disclosure caveat") and prose outside the fixed format. Seen in both runs, this is a pattern, not luck.
+- **Possible conflict with my own rules:** the skill treats `[COST HIDDEN]` as a problem, so the checker recommends showing the preview's cost. My HW4 prompts asked for the opposite in the regular app: "costs should not be on the iphone version", "I don't want costs shown in the regular app, there should be a settings or log page tucked away somewhere", "hide build log and costs links unless the user is in a debug=TRUE mode". Whether that is a flaw in the skill is my call.
+- It did not mention the saved-brain fallback the doer warned about; that is a behavior change, not a cost.

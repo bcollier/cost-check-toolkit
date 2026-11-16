@@ -58,3 +58,5 @@ Run 2. Doer: a fresh `claude -p` session (Opus 5.5) in the Ignatius API repo, to
 > is the skill and mcp up on github so I can try it on my lapotp
 
 Checked GitHub. `skills/cost-check/SKILL.md`, `mcp-server/model_prices_server.py` (with the read-only fix for Codex) and `requirements.txt` were all there and current. Pushed the prompt log.
+
+(Run 2 finished: notes/excerpts/run2.md, and the "Run 2" section of notes/build-notes.md. The branch `demo/haiku-5-5-run2` is pushed to ignatius-at-home-api, not merged.)
