@@ -60,3 +60,10 @@ Run 2. Doer: a fresh `claude -p` session (Opus 5.5) in the Ignatius API repo, to
 Checked GitHub. `skills/cost-check/SKILL.md`, `mcp-server/model_prices_server.py` (with the read-only fix for Codex) and `requirements.txt` were all there and current. Pushed the prompt log.
 
 (Run 2 finished: notes/excerpts/run2.md, and the "Run 2" section of notes/build-notes.md. The branch `demo/haiku-5-5-run2` is pushed to ignatius-at-home-api, not merged.)
+
+### 12. 2026-11-16
+> explain this The same format drift both times. Each report opened with a verdict line (“Push verdict: hold…”, “Cost review: pass…”) and added prose outside the fixed format. Since it happened twice, it’s a pattern rather than luck, and a stricter rule in SKILL.md is easy to fix and rerun
+>
+> also,  I drop the parts of the server that say to show the costs to the user. remind me what the cost check output goes? I want it to check whether all API calls are properly logged on both send and receive, and that all associated costs for the API calls should be logged for analytics.
+
+Explained the format drift and where the report goes. Revised the skill to v2. Removed: the "is the cost shown to the user" check and the COST SHOWN/HIDDEN tags (now explicitly out of scope). Added: checks that each paid call is logged when sent and when the response comes back (including failures), and that its cost is computed from actual usage and stored for analytics. Kept: the free-fallback check. The output format now forbids anything before or after the lines and gaps (no verdict, summary, headings or model advice). v1 is saved at notes/skill-versions/SKILL.v1.md. Reran the checker with v2 on both demo branches.
