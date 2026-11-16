@@ -67,3 +67,5 @@ Checked GitHub. `skills/cost-check/SKILL.md`, `mcp-server/model_prices_server.py
 > also,  I drop the parts of the server that say to show the costs to the user. remind me what the cost check output goes? I want it to check whether all API calls are properly logged on both send and receive, and that all associated costs for the API calls should be logged for analytics.
 
 Explained the format drift and where the report goes. Revised the skill to v2. Removed: the "is the cost shown to the user" check and the COST SHOWN/HIDDEN tags (now explicitly out of scope). Added: checks that each paid call is logged when sent and when the response comes back (including failures), and that its cost is computed from actual usage and stored for analytics. Kept: the free-fallback check. The output format now forbids anything before or after the lines and gaps (no verdict, summary, headings or model advice). v1 is saved at notes/skill-versions/SKILL.v1.md. Reran the checker with v2 on both demo branches.
+
+(v2 reruns finished: notes/excerpts/iteration-v2.md, and the "Skill v2 rerun" section of notes/build-notes.md.)

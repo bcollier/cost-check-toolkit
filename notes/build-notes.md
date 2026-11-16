@@ -81,3 +81,22 @@ Project 2 (Faculty Twin): "I want it to run for free, would it fit in the free c
 - **Drifted again, the same way as Run 1:** a verdict line ("Cost review: pass with one disclosure caveat") and prose outside the fixed format. Seen in both runs, this is a pattern, not luck.
 - **Possible conflict with my own rules:** the skill treats `[COST HIDDEN]` as a problem, so the checker recommends showing the preview's cost. My HW4 prompts asked for the opposite in the regular app: "costs should not be on the iphone version", "I don't want costs shown in the regular app, there should be a settings or log page tucked away somewhere", "hide build log and costs links unless the user is in a debug=TRUE mode". Whether that is a flaw in the skill is my call.
 - It did not mention the saved-brain fallback the doer warned about; that is a behavior change, not a cost.
+
+## Skill v2 rerun (2026-11-16)
+- **Why v2:** two problems showed up in v1 across both runs.
+  - **Format drift:** both reports opened with a verdict ("Push verdict: hold…", "Cost review: pass…") and added prose outside the format.
+  - **A check I don't want:** `[COST SHOWN | COST HIDDEN]` led the Run 2 checker to recommend showing the preview's cost to users, the opposite of my HW4 rule ("I don't want costs shown in the regular app").
+- **What changed:**
+  - Dropped the shown-to-user check and made it explicitly out of scope.
+  - Added SENT / RECEIVED / COST-recorded-for-analytics checks.
+  - Kept the free-fallback check.
+  - Required citations for each log write.
+  - The output must start with the lines and end after up to three gaps: "no verdict, no summary, no headings, no advice on which model to use".
+  - The diff between versions is in git (`f147b1f`), and v1 is in `notes/skill-versions/SKILL.v1.md`.
+- **Rerun:** same branches and same prompts, fresh Codex sessions. Excerpts: `notes/excerpts/iteration-v2.md`.
+  - **Format:** both reports now start directly with tagged lines and end with the gaps. No verdict line, prose paragraph or model advice. Small leftover inconsistency: "GAP:" in one report, "Gap:" in the other.
+  - **Description still triggers:** "I'm using the cost-check skill because this is a pre-push review of paid API usage." Tool calls: 14 in Run 1, 1 in Run 2.
+  - **Consistent finding in both:** `[SENT: NOT LOGGED]`. Ignatius writes its call log only in a `finally` block after the response (`app/llm.py:75`), so a call interrupted by a server restart leaves no record that it was sent. Verified in the code. My HW4 log has "Planning failed: Planning was interrupted by a server restart", which is exactly that case.
+  - **New finding (Run 2):** the cost for analytics is rounded to $0.0001 (`Meter.summary`, `app/pricing.py:160`) before the per-call difference is stored, so a Haiku 5.5 call under $0.00005 is recorded as $0. Verified: `_log_call` stores `after["usd"] - before["usd"]` from rounded summaries. Small in dollars, but it makes cheap calls look free in the analytics.
+  - **Kept from v1:** the Haiku 5.5 over-100k pricing gap (Run 1).
+  - **Scope changed (Run 1):** v2 listed all 8 models through the shared call site, not just the 3 the branch added. That is noisier, but it follows the new "every paid call" wording.
