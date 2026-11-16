@@ -43,3 +43,8 @@ Reminded me of the demo requirements (notes/ASSIGNMENT_CHECKLIST.md). Picked a r
 > remove the HW8 and CS name in teh description of this repo HW8 (CMU 15-114): a cost-check skill and a model_prices MCP server. be specific that this is for API costs correct?
 
 Changed the GitHub description to "An agent skill that flags paid API calls (LLM, text-to-speech, search) and whether each has a free fallback, plus an MCP server that looks up live LLM API prices".
+
+### 9. 2026-11-16
+> explain DEMONSTRATION.md, also where is documentation around the two skill runs? is this all up on github, I watn to run on laptop
+
+Explained what DEMONSTRATION.md must contain. Run 1's facts were already pushed in `notes/build-notes.md`, but the raw transcripts were not (`notes/runs/` is git-ignored). Added `notes/excerpts/run1.md`, verbatim and trimmed, so the runs can be read on GitHub. Gave laptop install steps. Only Run 1 had been done.
