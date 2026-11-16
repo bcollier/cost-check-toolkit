@@ -48,3 +48,13 @@ Changed the GitHub description to "An agent skill that flags paid API calls (LLM
 > explain DEMONSTRATION.md, also where is documentation around the two skill runs? is this all up on github, I watn to run on laptop
 
 Explained what DEMONSTRATION.md must contain. Run 1's facts were already pushed in `notes/build-notes.md`, but the raw transcripts were not (`notes/runs/` is git-ignored). Added `notes/excerpts/run1.md`, verbatim and trimmed, so the runs can be read on GitHub. Gave laptop install steps. Only Run 1 had been done.
+
+### 10. 2026-11-16
+> do this Switching those is real work that would make them about 10 times cheaper. Want me to run it, or would you rather pick the task?
+
+Run 2. Doer: a fresh `claude -p` session (Opus 5.5) in the Ignatius API repo, told to switch the fast model in `app/preview.py` and `app/talk_turns.py` from Haiku 4.5 to Haiku 5.5. It worked on a new local branch built on Run 1's, with no push. The prompt does not name `model_prices`. Then a fresh Codex checker session. Transcripts: notes/runs/run2-*.
+
+### 11. 2026-11-16
+> is the skill and mcp up on github so I can try it on my lapotp
+
+Checked GitHub. `skills/cost-check/SKILL.md`, `mcp-server/model_prices_server.py` (with the read-only fix for Codex) and `requirements.txt` were all there and current. Pushed the prompt log.
