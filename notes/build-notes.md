@@ -1,13 +1,34 @@
 # Build notes (facts for the write-up; not graded prose)
 
-## Evidence from earlier prompt logs (cost / free fallback was the most repeated theme)
-Ignatius at Home (HW4), PROMPT_LOG.md:
+## Evidence from earlier prompt logs
+Method: `notes/log_themes.py` takes only my own quoted prompts (lines starting with `>`), removes duplicates, and counts prompts per theme by keyword. Keyword matching overcounts a little (e.g. "free" in "feel free"); the quotes below were read by hand.
+
+| Theme | HW3 gAIm API Explorer | HW4 Ignatius | HW6 Slide Finder | Project 2 Faculty Twin | Total |
+|---|---|---|---|---|---|
+| prompts in the log | 4 | 286 | 48 | 140 | 478 |
+| screenshots ("here's what I see") | 0 | 62 | 0 | 1 | 63 |
+| cost / free mode | 0 | 41 | 0 | 7 | 48 |
+| look / design | 0 | 25 | 4 | 7 | 36 |
+| README / docs | 0 | 15 | 2 | 13 | 30 |
+| deploy / push | 0 | 17 | 0 | 13 | 30 |
+| test it / it's broken | 1 | 13 | 3 | 12 | 29 |
+| keys / secrets | 0 | 20 | 0 | 8 | 28 |
+| phone / iPhone | 0 | 19 | 0 | 0 | 19 |
+| spec first | 0 | 7 | 2 | 5 | 14 |
+| student privacy / names | 0 | 4 | 0 | 8 | 12 |
+
+HW5 and HW7 logs are not in these repos. Faculty Twin is Project 2, outside the HW3–HW7 range the assignment names; HW4 alone carries the cost theme.
+
+Cost quotes (HW4, Ignatius at Home, PROMPT_LOG.md), in the order I typed them:
 - "can we do a free version with free microsoft tts or a low cost version as well?"
 - "I want to be able to choose the model, and I want to show estimated costs for both the elevenlabs production and the model calls"
-- "can we have a free mode where we use a model I have academic access to on Jetstream so add one more key"
-- "can I give you a key to tavily so we can enable web search in free mode?"
-- "costs should not be on the iphone version, they should be displayed when building the retreat but not when playing through them"
-About 125 prompts across the Ignatius and Faculty Twin logs mention cost, money or free.
+- "can we have a free mode where we use a model I have academic access to on Jetstream"
+- "these should all have wrapping aroud them that safely drops them from the proces if we hit the c[redit limit]"
+- "why only one research site, for the free version I assumed you would still use all four free search engines"
+- "why does it say this retreat would cost 4.24 but it actually costed $21.13" (the estimate was five times too low)
+- "default new retreats to opus 5.5, show estimated rates / cost when choosing the models"
+- "How many minutes of content? Voices seem really expensive"
+Project 2 (Faculty Twin): "I want it to run for free, would it fit in the free cloudflare budget?"; "track tokens spent in / out etc. to estimate spend"
 
 ## What happened while building (2026-11-11)
 1. **The course's MCP example no longer runs.** `pip install mcp` installed 2.3.0, where `from mcp.server.fastmcp import FastMCP` raises an error: FastMCP was renamed `MCPServer` (`from mcp.server.mcpserver import MCPServer`). The server is written for 2.x and pins `mcp>=2.3,<3`.

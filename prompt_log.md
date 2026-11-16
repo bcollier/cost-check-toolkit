@@ -23,3 +23,8 @@ Started this file with prompts 1–3.
 > push this yourself
 
 Created the public GitHub repo bcollier/cost-check-toolkit and pushed. Ben had asked for it after the first attempt was blocked.
+
+### 5. 2026-11-16
+> tell me more about this I searched your Ignatius and Faculty Twin prompt logs (432 entries) for things you kept repeating. Here’s what came up, with quotes you could use as evidence.
+
+Redid the search properly. The first pass had counted every line of the logs, including the agent's summaries, and had missed the HW3 and HW6 logs. The new pass counts only my own quoted prompts (478 across HW3, HW4, HW6 and Project 2) by theme. The script is `notes/log_themes.py` and the table and quotes are in `notes/build-notes.md`. Cost came out as 48 prompts, not about 125. Screenshots of the live site were the most common theme at 63.
