@@ -110,3 +110,8 @@ Explained where Claude Code and Codex look for skills, copy versus symlink, how 
 > "How many minutes of content? Voices seem really expensive" Project 2 (Faculty Twin): "I want it to run for free, would it fit in the free cloudflare budget?"; "track tokens spent in / out etc. to estimate spend"
 
 Gave MCP server install steps: Python 3.10+, venv, a standalone check, Claude Code and Codex registration, and verification. Pointed out three factual mismatches between the draft README text and the code. Did not edit the README.
+
+### 17. 2026-11-16
+> [pasted terminal output from the install steps: pip install finished (mcp-2.3.0); the standalone check printed three Haiku 5.5 prices; `claude mcp add --scope user model-prices …` printed "Added stdio MCP server model-prices … to user config"; then the three Codex TOML lines were typed into zsh, which answered `zsh: no matches found: [mcp_servers.model-prices]`]
+
+Explained that the Claude Code steps worked and that the TOML lines belong in ~/.codex/config.toml, not the shell. Gave a command that appends the block only if it isn't already there, plus the checks to confirm it.
