@@ -86,3 +86,27 @@ Summarized the drift fix: what drifted, the change to SKILL.md, and the rerun re
 > how do I install a skill on a new machine?
 
 Explained where Claude Code and Codex look for skills, copy versus symlink, how to confirm the skill loaded, and that the MCP server is installed separately.
+
+### 16. 2026-11-16
+> whoops I meant how to install MCP ## What the MCP tool does
+>
+> This skill checks places where there are any paid calls to an API such as a paid LLM call to Anthropic, OpenRouter, or OpenAI. It also checks for APIs such as ElevenLabs and SpaceX AI, Grok.Within any paid API calls, it suggests other services that could be free versions. If this was a paid service such as text-to-speech from ElevenLabs, is there a Microsoft text-to-speech library or something that would do this for free at perhaps a lower quality?This ended up being the case for my prior assignment where I built the "Ignatius meditation kit" with voice interaction. I had premium voices from ElevenLabs, but it was much more affordable to use the Microsoft text-to-speech for the free versions.
+>
+> ## Why: the friction, with quotes from my prompt logs
+>
+> I dug through old prompts from prior assignments and did some clustering. The thing I asked the most about was screenshots, but this seemed like it would be simpler to impelement. This was the second most popular.
+>
+> Details on the search through my old logs are at https://github.com/bcollier/cost-check-toolkit/blob/main/notes/build-notes.md, but here are
+>
+> Cost quotes (HW4, Ignatius at Home, PROMPT_LOG.md):
+>
+> "can we do a free version with free microsoft tts or a low cost version as well?"
+> "I want to be able to choose the model, and I want to show estimated costs for both the elevenlabs production and the model calls"
+> "can we have a free mode where we use a model I have academic access to on Jetstream"
+> "these should all have wrapping aroud them that safely drops them from the proces if we hit the c[redit limit]"
+> "why only one research site, for the free version I assumed you would still use all four free search engines"
+> "why does it say this retreat would cost 4.24 but it actually costed $21.13" (the estimate was five times too low)
+> "default new retreats to opus 5.5, show estimated rates / cost when choosing the models"
+> "How many minutes of content? Voices seem really expensive" Project 2 (Faculty Twin): "I want it to run for free, would it fit in the free cloudflare budget?"; "track tokens spent in / out etc. to estimate spend"
+
+Gave MCP server install steps: Python 3.10+, venv, a standalone check, Claude Code and Codex registration, and verification. Pointed out three factual mismatches between the draft README text and the code. Did not edit the README.
