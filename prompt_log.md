@@ -69,3 +69,10 @@ Checked GitHub. `skills/cost-check/SKILL.md`, `mcp-server/model_prices_server.py
 Explained the format drift and where the report goes. Revised the skill to v2. Removed: the "is the cost shown to the user" check and the COST SHOWN/HIDDEN tags (now explicitly out of scope). Added: checks that each paid call is logged when sent and when the response comes back (including failures), and that its cost is computed from actual usage and stored for analytics. Kept: the free-fallback check. The output format now forbids anything before or after the lines and gaps (no verdict, summary, headings or model advice). v1 is saved at notes/skill-versions/SKILL.v1.md. Reran the checker with v2 on both demo branches.
 
 (v2 reruns finished: notes/excerpts/iteration-v2.md, and the "Skill v2 rerun" section of notes/build-notes.md.)
+
+### 13. 2026-11-16
+> address the drift The same format drift both times. Each report opened with a verdict line (“Push verdict: hold…”, “Cost review: pass…”) and added prose outside the fixed format. Since it happened twice, it’s a pattern rather than luck, and a stricter rule in SKILL.md is easy to fix and rerun.
+>
+> 1. The checker’s advice may contradict your own rule. It recommends showing the preview’s cost to the user. In HW4 you asked for the opposite: “I don’t want costs shown in the regular app, there should be a settings or log page tucked away somewhere.” If you agree that’s a flaw, the fix is to have the skill check costs against the project’s own rule for where costs are shown. That’s a strong ITERATION story, because the failure comes from your own past prompts.
+
+Both were already handled in skill v2 (prompt 12) and confirmed by the reruns. Pointed to the before and after.
