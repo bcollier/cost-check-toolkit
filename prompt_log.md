@@ -159,3 +159,10 @@ Explained that the chat used web search, not model_prices, because the server wa
 > EOF
 
 Tested with a probe skill that Codex 0.157 reads ~/.agents/skills, so the pasted script does install the skill for Codex and Claude Code, but not the MCP server. ChatGPT's chat app can't load local skills or local (stdio) MCP servers. Added install.sh, which links the skill and installs and registers the server for both tools, and tested it twice in a throwaway home folder.
+
+### 24. 2026-11-17
+> what is supposed to go in the readme here ## Tools confirmed
+> ## Borrowed or adapted
+> ## How I used AI
+
+Quoted the assignment's wording for the three sections and listed the facts for each (what was confirmed where, what came from the course's spec-check example and the MCP docs, what Claude Code and Codex did versus what Ben decided), with citations. Did not write the README.
