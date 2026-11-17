@@ -100,3 +100,11 @@ Project 2 (Faculty Twin): "I want it to run for free, would it fit in the free c
   - **New finding (Run 2):** the cost for analytics is rounded to $0.0001 (`Meter.summary`, `app/pricing.py:160`) before the per-call difference is stored, so a Haiku 5.5 call under $0.00005 is recorded as $0. Verified: `_log_call` stores `after["usd"] - before["usd"]` from rounded summaries. Small in dollars, but it makes cheap calls look free in the analytics.
   - **Kept from v1:** the Haiku 5.5 over-100k pricing gap (Run 1).
   - **Scope changed (Run 1):** v2 listed all 8 models through the shared call site, not just the 3 the branch added. That is noisier, but it follows the new "every paid call" wording.
+
+## Run 3 (2026-11-17): full-project check in Codex Desktop
+
+- **Prompt:** "look at the code for ignatius and run the cost check skill". This explicitly requested the skill, without naming `model_prices`.
+- **Scope:** the current GitHub API and web repositories, at `6ce0dc4` and `472d0dd` respectively; no doer branch or new implementation was part of this run. The local Ignatius checkout contained the earlier design snapshot, so the checker read the current code from GitHub.
+- **Evidence:** [Run 3 excerpts](excerpts/run3.md) include the original prompt, skill-loading command, all 17 completed `model_prices` calls, selected verbatim tool results, and the complete final report. No Ignatius files changed.
+- **Report:** 20 tagged call-path entries, followed by three gaps: live xAI sessions can outlast the recorded limit; most search services record zero dollars; ElevenLabs analytics count only retained recordings rather than cumulative spending. These are the checker’s reported findings, preserved for review.
+- **Tool behavior:** the MCP tool supplied current text-model prices. It returned no match for `gpt-live-1`, `grok-voice`, and `grok-transcribe`; the checker also consulted provider web documentation for voice and TypeSafe pricing.

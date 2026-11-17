@@ -171,3 +171,13 @@ Quoted the assignment's wording for the three sections and listed the facts for 
 > ok is everything ready to submit
 
 Checked the repo against the assignment: the code, skill, install script and run excerpts are in place, but README.md, DEMONSTRATION.md and ITERATION.md on GitHub are still heading-only stubs, so it is not ready. Listed what is left.
+
+### 26. 2026-11-17 — Codex Desktop
+> look at the code for ignatius and run the cost check skill
+
+Loaded cost-check and reviewed the current Ignatius backend and web code from GitHub. Called model_prices 17 times and consulted provider web documentation for services not covered by the model list. Returned 20 tagged call-path entries and three gaps; changed no Ignatius files. The report is preserved in notes/excerpts/run3.md.
+
+### 27. 2026-11-17 — Codex Desktop
+> add this run to an example like in this folder . this is run 3 [https://github.com/bcollier/cost-check-toolkit/tree/main/notes/excerpts](https://github.com/bcollier/cost-check-toolkit/tree/main/notes/excerpts)
+
+Added notes/excerpts/run3.md in the existing verbatim-excerpt format, with the original prompt, skill-loading evidence, MCP calls and selected results, and the complete report. Added a factual Run 3 entry to notes/build-notes.md. Used a separate checkout of the latest GitHub main to preserve the existing local edits to README.md, DEMONSTRATION.md and ITERATION.md.
