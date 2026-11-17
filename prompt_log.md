@@ -115,3 +115,8 @@ Gave MCP server install steps: Python 3.10+, venv, a standalone check, Claude Co
 > [pasted terminal output from the install steps: pip install finished (mcp-2.3.0); the standalone check printed three Haiku 5.5 prices; `claude mcp add --scope user model-prices …` printed "Added stdio MCP server model-prices … to user config"; then the three Codex TOML lines were typed into zsh, which answered `zsh: no matches found: [mcp_servers.model-prices]`]
 
 Explained that the Claude Code steps worked and that the TOML lines belong in ~/.codex/config.toml, not the shell. Gave a command that appends the block only if it isn't already there, plus the checks to confirm it.
+
+### 18. 2026-11-16
+> what do I need to know to write the readme here, how will it know to use teh skill?
+
+Explained how the agent decides to load the skill (it reads only the description until a request matches, or the user names the skill) and how it decides to call the MCP tool (the tool's docstring), with the run prompts as evidence. Listed what each README section needs, as facts. Did not write the README.
