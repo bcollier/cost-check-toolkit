@@ -135,3 +135,8 @@ Asked what was meant; suggested `cat ~/.codex/config.toml` to check the Codex bl
 > how does the MCP tool get triggered
 
 Explained the three ways model_prices gets called: the agent matches the request to the tool's docstring, the cost-check skill tells it to, or the user names the tool. Pointed to the Run 1 and Run 2 doer calls as evidence.
+
+### 22. 2026-11-17
+> [screenshot of a Claude chat answering "compare the current prices for openai and anthropic API calls" with "Searched the web, read 3 pages" and a price table] my local claude
+
+Explained that the chat used web search, not model_prices, because the server was registered only with Claude Code and Codex; the Claude desktop app reads its own config file. Gave the desktop config block. Ran model_prices on the same models: every price in the screenshot matched.
