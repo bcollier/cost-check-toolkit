@@ -76,3 +76,8 @@ Explained the format drift and where the report goes. Revised the skill to v2. R
 > 1. The checker’s advice may contradict your own rule. It recommends showing the preview’s cost to the user. In HW4 you asked for the opposite: “I don’t want costs shown in the regular app, there should be a settings or log page tucked away somewhere.” If you agree that’s a flaw, the fix is to have the skill check costs against the project’s own rule for where costs are shown. That’s a strong ITERATION story, because the failure comes from your own past prompts.
 
 Both were already handled in skill v2 (prompt 12) and confirmed by the reruns. Pointed to the before and after.
+
+### 14. 2026-11-16
+> summarize what we did to address drift
+
+Summarized the drift fix: what drifted, the change to SKILL.md, and the rerun result.
