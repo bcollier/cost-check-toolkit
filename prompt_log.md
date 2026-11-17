@@ -120,3 +120,8 @@ Explained that the Claude Code steps worked and that the TOML lines belong in ~/
 > what do I need to know to write the readme here, how will it know to use teh skill?
 
 Explained how the agent decides to load the skill (it reads only the description until a request matches, or the user names the skill) and how it decides to call the MCP tool (the tool's docstring), with the run prompts as evidence. Listed what each README section needs, as facts. Did not write the README.
+
+### 19. 2026-11-16
+> [pasted terminal output: the config.toml append ran silently; `claude mcp get model-prices` showed "Status: ✔ Connected"; `codex mcp list # should list model-prices as enabled` failed with `error: unexpected argument '#' found`]
+
+Explained that interactive zsh doesn't treat `#` as a comment, so the comment in my command was passed to codex as arguments. Gave the command again without it.
