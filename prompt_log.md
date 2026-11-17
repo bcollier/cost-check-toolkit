@@ -81,3 +81,8 @@ Both were already handled in skill v2 (prompt 12) and confirmed by the reruns. P
 > summarize what we did to address drift
 
 Summarized the drift fix: what drifted, the change to SKILL.md, and the rerun result.
+
+### 15. 2026-11-16
+> how do I install a skill on a new machine?
+
+Explained where Claude Code and Codex look for skills, copy versus symlink, how to confirm the skill loaded, and that the MCP server is installed separately.
