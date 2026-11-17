@@ -197,4 +197,4 @@ Added prompts 28 and 29 to this log, pulled the newer commits from GitHub (promp
 ### 30. 2026-11-17
 > go
 
-Updated the GitHub repo description to match skill v2 (send and receive logging, cost recorded for analytics) instead of v1's free-fallback wording.
+Updated the GitHub repo description to match skill v2 (send and receive logging, cost recorded for analytics) instead of v1's free-fallback wording. Pulled the new README, DEMONSTRATION and ITERATION drafts and Run 3 from GitHub, renumbered this entry to 30 after the other sessions' 26–29, and checked the drafts against the assignment and the run records (facts only, no prose).
