@@ -181,3 +181,15 @@ Loaded cost-check and reviewed the current Ignatius backend and web code from Gi
 > add this run to an example like in this folder . this is run 3 [https://github.com/bcollier/cost-check-toolkit/tree/main/notes/excerpts](https://github.com/bcollier/cost-check-toolkit/tree/main/notes/excerpts)
 
 Added notes/excerpts/run3.md in the existing verbatim-excerpt format, with the original prompt, skill-loading evidence, MCP calls and selected results, and the complete report. Added a factual Run 3 entry to notes/build-notes.md. Used a separate checkout of the latest GitHub main to preserve the existing local edits to README.md, DEMONSTRATION.md and ITERATION.md.
+
+### 28. 2026-11-17
+> what am I supposed to put here
+>
+> ### The MCP server (exact config; mark machine-specific paths)
+
+Explained that this README section is the server's install steps for the TAs: create the venv and install `requirements.txt`, register the server with Claude Code (`claude mcp add --scope user model-prices -- <python> <server.py>`) and with Codex (`[mcp_servers.model-prices]` in `~/.codex/config.toml`), and mark `/Users/bcollier/Code/cost-check-toolkit` as the path to replace with your own clone. Suggested adding a "check it worked" step (`claude mcp list`) and the read-only fix for Codex. Did not write the README prose.
+
+### 29. 2026-11-17
+> add this conversation to the prompt log, and push everything to github
+
+Added prompts 28 and 29 to this log, pulled the newer commits from GitHub (prompts 15–27, install.sh, Run 3), then committed and pushed everything, including my in-progress edits to README.md, DEMONSTRATION.md and ITERATION.md.
