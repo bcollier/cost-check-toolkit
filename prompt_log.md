@@ -125,3 +125,13 @@ Explained how the agent decides to load the skill (it reads only the description
 > [pasted terminal output: the config.toml append ran silently; `claude mcp get model-prices` showed "Status: ✔ Connected"; `codex mcp list # should list model-prices as enabled` failed with `error: unexpected argument '#' found`]
 
 Explained that interactive zsh doesn't treat `#` as a comment, so the comment in my command was passed to codex as arguments. Gave the command again without it.
+
+### 20. 2026-11-17
+> cat
+
+Asked what was meant; suggested `cat ~/.codex/config.toml` to check the Codex block.
+
+### 21. 2026-11-17
+> how does the MCP tool get triggered
+
+Explained the three ways model_prices gets called: the agent matches the request to the tool's docstring, the cost-check skill tells it to, or the user names the tool. Pointed to the Run 1 and Run 2 doer calls as evidence.
