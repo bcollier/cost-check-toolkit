@@ -193,3 +193,8 @@ Explained that this README section is the server's install steps for the TAs: cr
 > add this conversation to the prompt log, and push everything to github
 
 Added prompts 28 and 29 to this log, pulled the newer commits from GitHub (prompts 15–27, install.sh, Run 3), then committed and pushed everything, including my in-progress edits to README.md, DEMONSTRATION.md and ITERATION.md.
+
+### 30. 2026-11-17
+> go
+
+Updated the GitHub repo description to match skill v2 (send and receive logging, cost recorded for analytics) instead of v1's free-fallback wording.
