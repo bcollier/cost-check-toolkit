@@ -140,3 +140,22 @@ Explained the three ways model_prices gets called: the agent matches the request
 > [screenshot of a Claude chat answering "compare the current prices for openai and anthropic API calls" with "Searched the web, read 3 pages" and a price table] my local claude
 
 Explained that the chat used web search, not model_prices, because the server was registered only with Claude Code and Codex; the Claude desktop app reads its own config file. Gave the desktop config block. Ran model_prices on the same models: every price in the screenshot matched.
+
+### 23. 2026-11-17
+> this doesn't install for chatgpt or codex?
+>
+> how do I tell users to install this I thougth the code worked
+>
+> bash <<'EOF'
+> set -euo pipefail
+> mkdir -p ~/.agents/skills ~/.claude/skills
+> TMP=$(mktemp -d)
+> git clone --depth 1 https://github.com/bcollier/cost-check-toolkit.git "$TMP/repo"
+> rm -rf ~/.agents/skills/cost-check ~/.claude/skills/cost-check
+> cp -R "$TMP/repo/skills/cost-check" ~/.agents/skills/cost-check
+> ln -s ~/.agents/skills/cost-check ~/.claude/skills/cost-check
+> rm -rf "$TMP"
+> echo "Installed cost-check"
+> EOF
+
+Tested with a probe skill that Codex 0.157 reads ~/.agents/skills, so the pasted script does install the skill for Codex and Claude Code, but not the MCP server. ChatGPT's chat app can't load local skills or local (stdio) MCP servers. Added install.sh, which links the skill and installs and registers the server for both tools, and tested it twice in a throwaway home folder.
