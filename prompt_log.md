@@ -166,3 +166,8 @@ Tested with a probe skill that Codex 0.157 reads ~/.agents/skills, so the pasted
 > ## How I used AI
 
 Quoted the assignment's wording for the three sections and listed the facts for each (what was confirmed where, what came from the course's spec-check example and the MCP docs, what Claude Code and Codex did versus what Ben decided), with citations. Did not write the README.
+
+### 25. 2026-11-17
+> ok is everything ready to submit
+
+Checked the repo against the assignment: the code, skill, install script and run excerpts are in place, but README.md, DEMONSTRATION.md and ITERATION.md on GitHub are still heading-only stubs, so it is not ready. Listed what is left.
