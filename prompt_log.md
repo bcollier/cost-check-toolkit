@@ -198,3 +198,8 @@ Added prompts 28 and 29 to this log, pulled the newer commits from GitHub (promp
 > go
 
 Updated the GitHub repo description to match skill v2 (send and receive logging, cost recorded for analytics) instead of v1's free-fallback wording. Pulled the new README, DEMONSTRATION and ITERATION drafts and Run 3 from GitHub, renumbered this entry to 30 after the other sessions' 26–29, and checked the drafts against the assignment and the run records (facts only, no prose).
+
+### 31. 2026-11-18
+> do all of these fixes, I wrote the originals I am fine having AI do the fixes
+
+Revised README.md, DEMONSTRATION.md and ITERATION.md from Ben's drafts, keeping his wording where it was accurate. Removed the banners, added the MCP install section (install.sh plus manual steps with the machine-specific path marked), corrected the task, the checker findings and the skill description, added trimmed doer and checker excerpts for both runs, filled in borrowed sources and AI use with citations, and made ITERATION specific (v1's COST SHOWN/HIDDEN tag, the v2 changes, the rerun findings). Left three "[Ben: agree or disagree, and why]" markers in DEMONSTRATION.md where only Ben can say whether he agrees.
