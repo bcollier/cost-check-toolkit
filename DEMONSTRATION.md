@@ -92,7 +92,9 @@ Its top suggestion was "Show the preview's estimated cost before automatically r
 
 ## What the checker caught, and whether I agree
 
-**Run 1: Haiku 5.5's higher price over 100k tokens isn't counted.** The app stores only the lower rate and never applies the 5× rate above 100k tokens (`app/pricing.py:59` and `:140`). This is a real gap in the price meter. In practice the places that use Haiku don't get close: the companion's context is capped at 60,000 characters (about 15,000 tokens) and the preview reads 6,000 characters. [Ben: agree or disagree, and why]
+**Run 1: Haiku 5.5's higher price over 100k tokens isn't counted.** The app stores only the lower rate and never applies the 5× rate above 100k tokens (`app/pricing.py:59` and `:140`). This is a real gap in the price meter. In practice the places that use Haiku don't get close: the companion's context is capped at 60,000 characters (about 15,000 tokens) and the preview reads 6,000 characters. 
+
+I agreed with this finding, and asked for revisions.
 
 **Run 2: show the user what the preview and summary cost.** I disagree. In HW4 I decided costs shouldn't be shown in the regular app: "I don't want costs shown in the regular app, there should be a settings or log page tucked away somewhere." The checker was only following my v1 skill, which had a COST SHOWN / COST HIDDEN tag. That became my iteration (see [ITERATION.md](ITERATION.md)).
 
