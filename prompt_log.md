@@ -208,3 +208,8 @@ Revised README.md, DEMONSTRATION.md and ITERATION.md from Ben's drafts, keeping 
 > push to github
 
 Everything was already pushed (59d4ee4); no local changes and nothing new on GitHub. Pushed this log entry.
+
+### 33. 2026-11-18
+> what do I need to do
+
+Listed what is left: the three "agree or disagree" markers in DEMONSTRATION.md, then the Google form with the repo link.
