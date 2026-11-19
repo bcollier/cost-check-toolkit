@@ -218,3 +218,8 @@ Listed what is left: the three "agree or disagree" markers in DEMONSTRATION.md, 
 > ok if it looks good then let's get the link for the form
 
 Pulled Ben's Run 1 answer (9ac1db9). Two "[Ben: agree or disagree, and why]" markers are still in DEMONSTRATION.md (the v2 findings). Gave the form link from the HW8 page: https://forms.gle/9n3VJxmS6R1D65ME6
+
+### 35. 2026-11-18
+> give me a look again, it look fine on my laptop and github check you are synced
+
+In sync with GitHub (adf1a53). GitHub's DEMONSTRATION.md still has the two "[Ben: agree or disagree, and why]" markers at lines 103-104, so the laptop edits are probably not committed or pushed yet. Gave the commands to check.
