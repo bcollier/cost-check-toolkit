@@ -100,9 +100,14 @@ I agreed with this finding, and asked for revisions.
 
 **After the fix (skill v2), on the same two branches:**
 
-- **Requests aren't logged when they're sent.** The log is written only after the response comes back (`app/llm.py:75`). If the process dies mid-call, there's no record that the request went out. [Ben: agree or disagree, and why]
-- **Very cheap calls are recorded as $0.** Each call's cost is rounded to $0.0001 before it's stored (`app/pricing.py:160`), so at Haiku 5.5 prices anything under $0.00005 shows up as zero. [Ben: agree or disagree, and why]
+- **Requests aren't logged when they're sent.** The log is written only after the response comes back (`app/llm.py:75`). If the process dies mid-call, there's no record that the request went out. 
 
-Both are true when I check the code.
+I agreed this was a problem when we were designing it and didn't fix it then. This is correct that I should improve the logging of outbound API calls.
+
+- **Very cheap calls are recorded as $0.** Each call's cost is rounded to $0.0001 before it's stored (`app/pricing.py:160`), so at Haiku 5.5 prices anything under $0.00005 shows up as zero. 
+
+Both are true when I check the code. in pricying.py This needs to be fixed because we do have very small calles apparently as small as $0.0002 so it could be possible the log is missing some small charges that are being rounded. This would be a JIRA bug to fix.
+
+"usd": round(self.usd, 4),     # line 160
 
 **Run 3 (extra):** I also asked Codex Desktop to "look at the code for ignatius and run the cost check skill" on the whole app, not just a branch. It made 17 `model_prices` calls and found three gaps. The biggest one: "xAI can continue billing after the server's recorded limit" (`app/talk.py:430`). See [notes/excerpts/run3.md](notes/excerpts/run3.md).
