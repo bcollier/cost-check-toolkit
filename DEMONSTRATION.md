@@ -112,6 +112,6 @@ Both findings are true when I check the code. This is the line in `pricing.py`:
 "usd": round(self.usd, 4),     # line 160
 ```
 
-This needs to be fixed. Some of our calls cost as little as $0.0002, so rounding to four decimals can be off by up to a quarter of a call's cost, and any call under $0.00005 is logged as $0. The log could be missing small charges. This would be a JIRA bug to fix.
+This needs to be fixed. Some of our calls cost as little as $0.0002, and each call's stored cost can be off by up to $0.0001, which is half of a call that small. A very cheap call can be logged as $0. The log could be missing small charges. This would be a JIRA bug to fix.
 
 **Run 3 (extra):** I also asked Codex Desktop to "look at the code for ignatius and run the cost check skill" on the whole app, not just a branch. It made 17 `model_prices` calls and found three gaps. The biggest one: "xAI can continue billing after the server's recorded limit" (`app/talk.py:430`). See [notes/excerpts/run3.md](notes/excerpts/run3.md).
