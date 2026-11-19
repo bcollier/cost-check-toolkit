@@ -235,3 +235,14 @@ Showed the Ignatius code on demo/haiku-5-5-run2: `Meter.summary()` rounds the ru
 > what needs to be done to fix this to correctly log small charges that are a fraction of a cent
 
 Traced the cost path in Ignatius main: Meter.summary() rounds to 4 decimals (app/pricing.py:152), llm.py and jetstream.py subtract two rounded totals, llm_log.py rounds to 6, and the llm_calls.usd column is numeric(12, 6). Gave the fix: stop rounding in summary(), round only where costs are displayed, optionally widen the column, and add a test for a tiny call. Offered to make it on a branch.
+
+### 38. 2026-11-18
+> are these two statements both right one says four digitst one says five
+>
+> - **Very cheap calls are recorded as $0.** Each call's cost is rounded to $0.0001 before it's stored (`app/pricing.py:160`), so at Haiku 5.5 prices anything under $0.00005 shows up as zero.
+>
+> Both are true when I check the code. in pricying.py
+>
+> "usd": round(self.usd, 4),     # line 160
+
+Explained that both are right: round(x, 4) keeps 4 decimal places (steps of $0.0001), and anything under half a step ($0.00005, written with 5 decimals) rounds down to 0. Showed round() on sample values.
