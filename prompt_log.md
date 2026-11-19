@@ -213,3 +213,8 @@ Everything was already pushed (59d4ee4); no local changes and nothing new on Git
 > what do I need to do
 
 Listed what is left: the three "agree or disagree" markers in DEMONSTRATION.md, then the Google form with the repo link.
+
+### 34. 2026-11-18
+> ok if it looks good then let's get the link for the form
+
+Pulled Ben's Run 1 answer (9ac1db9). Two "[Ben: agree or disagree, and why]" markers are still in DEMONSTRATION.md (the v2 findings). Gave the form link from the HW8 page: https://forms.gle/9n3VJxmS6R1D65ME6
