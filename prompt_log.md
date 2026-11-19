@@ -223,3 +223,10 @@ Pulled Ben's Run 1 answer (9ac1db9). Two "[Ben: agree or disagree, and why]" mar
 > give me a look again, it look fine on my laptop and github check you are synced
 
 In sync with GitHub (adf1a53). GitHub's DEMONSTRATION.md still has the two "[Ben: agree or disagree, and why]" markers at lines 103-104, so the laptop edits are probably not committed or pushed yet. Gave the commands to check.
+
+### 36. 2026-11-18
+> show me this code
+>
+> - **Very cheap calls are recorded as $0.** Each call's cost is rounded to $0.0001 before it's stored (`app/pricing.py:160`), so at Haiku 5.5 prices anything under $0.00005 shows up as zero.
+
+Showed the Ignatius code on demo/haiku-5-5-run2: `Meter.summary()` rounds the running total to 4 decimals (app/pricing.py:160), `_log_call` stores after minus before of those rounded totals (app/llm.py:123, 136), and llm_log.py:103 rounds to 6 decimals too late to help. Noted the nuance: the error doesn't add up across calls on the same meter; a call is stored as $0 only when the meter's running total stays under the next $0.0001 step, and a typical preview call (about $0.0002) is not affected.
